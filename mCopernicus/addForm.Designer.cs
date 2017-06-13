@@ -67,7 +67,7 @@
             this.materialDivider1.Location = new System.Drawing.Point(-5, 378);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(320, 1);
+            this.materialDivider1.Size = new System.Drawing.Size(380, 1);
             this.materialDivider1.TabIndex = 0;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -78,7 +78,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.Size = new System.Drawing.Size(106, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "服务器地址";
             // 
@@ -86,18 +86,18 @@
             // 
             this.textBoxIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxIP.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxIP.Location = new System.Drawing.Point(95, 3);
+            this.textBoxIP.Location = new System.Drawing.Point(115, 3);
             this.textBoxIP.Name = "textBoxIP";
-            this.textBoxIP.Size = new System.Drawing.Size(185, 27);
+            this.textBoxIP.Size = new System.Drawing.Size(225, 27);
             this.textBoxIP.TabIndex = 3;
             // 
             // textBoxPort
             // 
             this.textBoxPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPort.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxPort.Location = new System.Drawing.Point(95, 36);
+            this.textBoxPort.Location = new System.Drawing.Point(115, 36);
             this.textBoxPort.Name = "textBoxPort";
-            this.textBoxPort.Size = new System.Drawing.Size(185, 27);
+            this.textBoxPort.Size = new System.Drawing.Size(225, 27);
             this.textBoxPort.TabIndex = 5;
             // 
             // label2
@@ -107,7 +107,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(3, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(106, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "服务器端口";
             // 
@@ -115,9 +115,9 @@
             // 
             this.textBoxPassWord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPassWord.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxPassWord.Location = new System.Drawing.Point(95, 69);
+            this.textBoxPassWord.Location = new System.Drawing.Point(115, 69);
             this.textBoxPassWord.Name = "textBoxPassWord";
-            this.textBoxPassWord.Size = new System.Drawing.Size(185, 27);
+            this.textBoxPassWord.Size = new System.Drawing.Size(225, 27);
             this.textBoxPassWord.TabIndex = 7;
             // 
             // label3
@@ -127,7 +127,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(3, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "连接密码";
             // 
@@ -138,7 +138,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(3, 107);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 20);
+            this.label4.Size = new System.Drawing.Size(106, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "加密方式";
             // 
@@ -160,9 +160,9 @@
             "RC4",
             "RC4-MD5",
             "SALSA20"});
-            this.methodBox.Location = new System.Drawing.Point(95, 103);
+            this.methodBox.Location = new System.Drawing.Point(115, 103);
             this.methodBox.Name = "methodBox";
-            this.methodBox.Size = new System.Drawing.Size(185, 28);
+            this.methodBox.Size = new System.Drawing.Size(225, 28);
             this.methodBox.TabIndex = 9;
             // 
             // basicPanel
@@ -187,7 +187,7 @@
             this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.basicPanel.Size = new System.Drawing.Size(283, 135);
+            this.basicPanel.Size = new System.Drawing.Size(343, 135);
             this.basicPanel.TabIndex = 10;
             // 
             // highDivider
@@ -197,13 +197,13 @@
             this.highDivider.Location = new System.Drawing.Point(-5, 154);
             this.highDivider.MouseState = MaterialSkin.MouseState.HOVER;
             this.highDivider.Name = "highDivider";
-            this.highDivider.Size = new System.Drawing.Size(320, 1);
+            this.highDivider.Size = new System.Drawing.Size(390, 1);
             this.highDivider.TabIndex = 11;
             this.highDivider.Text = "materialDivider2";
             // 
             // highPanel
             // 
-            this.highPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.highPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.highPanel.ColumnCount = 2;
             this.highPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.86219F));
             this.highPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.13781F));
@@ -225,7 +225,7 @@
             this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.highPanel.Size = new System.Drawing.Size(283, 201);
+            this.highPanel.Size = new System.Drawing.Size(343, 201);
             this.highPanel.TabIndex = 12;
             // 
             // label5
@@ -235,7 +235,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(3, 6);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 20);
+            this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "本地地址";
             // 
@@ -243,9 +243,9 @@
             // 
             this.textBoxLocalIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLocalIP.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxLocalIP.Location = new System.Drawing.Point(95, 3);
+            this.textBoxLocalIP.Location = new System.Drawing.Point(115, 3);
             this.textBoxLocalIP.Name = "textBoxLocalIP";
-            this.textBoxLocalIP.Size = new System.Drawing.Size(185, 27);
+            this.textBoxLocalIP.Size = new System.Drawing.Size(225, 27);
             this.textBoxLocalIP.TabIndex = 5;
             this.textBoxLocalIP.Text = "127.0.0.1";
             // 
@@ -256,7 +256,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(3, 39);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 20);
+            this.label6.Size = new System.Drawing.Size(106, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "本地端口";
             // 
@@ -264,9 +264,9 @@
             // 
             this.textBoxLoaclPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLoaclPort.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxLoaclPort.Location = new System.Drawing.Point(95, 36);
+            this.textBoxLoaclPort.Location = new System.Drawing.Point(115, 36);
             this.textBoxLoaclPort.Name = "textBoxLoaclPort";
-            this.textBoxLoaclPort.Size = new System.Drawing.Size(185, 27);
+            this.textBoxLoaclPort.Size = new System.Drawing.Size(225, 27);
             this.textBoxLoaclPort.TabIndex = 7;
             this.textBoxLoaclPort.Text = "1080";
             // 
@@ -277,7 +277,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(3, 72);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 20);
+            this.label7.Size = new System.Drawing.Size(106, 20);
             this.label7.TabIndex = 8;
             this.label7.Text = "超时";
             // 
@@ -285,14 +285,14 @@
             // 
             this.numericUpDownTimeOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDownTimeOut.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.numericUpDownTimeOut.Location = new System.Drawing.Point(95, 69);
+            this.numericUpDownTimeOut.Location = new System.Drawing.Point(115, 69);
             this.numericUpDownTimeOut.Maximum = new decimal(new int[] {
             9000,
             0,
             0,
             0});
             this.numericUpDownTimeOut.Name = "numericUpDownTimeOut";
-            this.numericUpDownTimeOut.Size = new System.Drawing.Size(185, 27);
+            this.numericUpDownTimeOut.Size = new System.Drawing.Size(225, 27);
             this.numericUpDownTimeOut.TabIndex = 9;
             this.numericUpDownTimeOut.Value = new decimal(new int[] {
             1000,
@@ -305,9 +305,9 @@
             this.checkBoxHTTPProxy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxHTTPProxy.AutoSize = true;
             this.checkBoxHTTPProxy.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.checkBoxHTTPProxy.Location = new System.Drawing.Point(95, 103);
+            this.checkBoxHTTPProxy.Location = new System.Drawing.Point(115, 103);
             this.checkBoxHTTPProxy.Name = "checkBoxHTTPProxy";
-            this.checkBoxHTTPProxy.Size = new System.Drawing.Size(185, 24);
+            this.checkBoxHTTPProxy.Size = new System.Drawing.Size(225, 24);
             this.checkBoxHTTPProxy.TabIndex = 10;
             this.checkBoxHTTPProxy.Text = "HTTP(S)代理模式";
             this.checkBoxHTTPProxy.UseVisualStyleBackColor = true;
@@ -317,9 +317,9 @@
             this.checkBoxAuth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxAuth.AutoSize = true;
             this.checkBoxAuth.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.checkBoxAuth.Location = new System.Drawing.Point(95, 136);
+            this.checkBoxAuth.Location = new System.Drawing.Point(115, 136);
             this.checkBoxAuth.Name = "checkBoxAuth";
-            this.checkBoxAuth.Size = new System.Drawing.Size(185, 24);
+            this.checkBoxAuth.Size = new System.Drawing.Size(225, 24);
             this.checkBoxAuth.TabIndex = 11;
             this.checkBoxAuth.Text = "一次验证";
             this.checkBoxAuth.UseVisualStyleBackColor = true;
@@ -329,9 +329,9 @@
             this.checkBoxDebugLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxDebugLog.AutoSize = true;
             this.checkBoxDebugLog.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.checkBoxDebugLog.Location = new System.Drawing.Point(95, 171);
+            this.checkBoxDebugLog.Location = new System.Drawing.Point(115, 171);
             this.checkBoxDebugLog.Name = "checkBoxDebugLog";
-            this.checkBoxDebugLog.Size = new System.Drawing.Size(185, 24);
+            this.checkBoxDebugLog.Size = new System.Drawing.Size(225, 24);
             this.checkBoxDebugLog.TabIndex = 12;
             this.checkBoxDebugLog.Text = "调试级别日志";
             this.checkBoxDebugLog.UseVisualStyleBackColor = true;
@@ -343,7 +343,7 @@
             this.saveButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.saveButton.Depth = 0;
             this.saveButton.Icon = null;
-            this.saveButton.Location = new System.Drawing.Point(239, 388);
+            this.saveButton.Location = new System.Drawing.Point(299, 388);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.saveButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveButton.Name = "saveButton";
@@ -391,7 +391,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 433);
+            this.ClientSize = new System.Drawing.Size(367, 433);
             this.Controls.Add(this.inputURLButton);
             this.Controls.Add(this.moreButton);
             this.Controls.Add(this.saveButton);
@@ -417,13 +417,9 @@
 
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxIP;
-        private System.Windows.Forms.TextBox textBoxPort;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxPassWord;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox methodBox;
         private System.Windows.Forms.TableLayoutPanel basicPanel;
         private MaterialSkin.Controls.MaterialDivider highDivider;
         private System.Windows.Forms.TableLayoutPanel highPanel;
@@ -439,5 +435,9 @@
         private MaterialSkin.Controls.MaterialFlatButton saveButton;
         private MaterialSkin.Controls.MaterialFlatButton moreButton;
         private MaterialSkin.Controls.MaterialFlatButton inputURLButton;
+        public System.Windows.Forms.TextBox textBoxIP;
+        public System.Windows.Forms.TextBox textBoxPort;
+        public System.Windows.Forms.TextBox textBoxPassWord;
+        public System.Windows.Forms.ComboBox methodBox;
     }
 }

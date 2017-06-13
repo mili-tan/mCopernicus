@@ -65,7 +65,7 @@ namespace mCopernicus
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            new addForm().ShowDialog();
+            new addForm(null,null,null,null).ShowDialog();
         }
     }
 }

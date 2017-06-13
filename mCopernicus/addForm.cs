@@ -27,24 +27,27 @@ namespace mCopernicus
             public bool auth { get; set; }
         }
 
-        public addForm()
+        public addForm(string method, string pass, string ip, string port)
         {
             InitializeComponent();
             highDivider.Hide();
             highPanel.Hide();
             Height = Height - 220;
+            if (method != null)
+            {
+                textBoxIP.Text = ip;
+                textBoxPassWord.Text = pass;
+                methodBox.Text = method;
+                textBoxPort.Text = port;
+            }
         }
 
         private void addForm_Load(object sender, EventArgs e)
         {
+            //TopMost = true;
             methodBox.SelectedIndex = 2;
             MaximizeBox = false;
             MinimizeBox = false;
-
-            //var materialSkinManager = MaterialSkinManager.Instance;
-            //materialSkinManager.AddFormToManage(this);
-            //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            //materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey500, Primary.BlueGrey700, Primary.BlueGrey700, Accent.Blue400, TextShade.WHITE);
         }
 
         private void moreButton_Click(object sender, EventArgs e)
@@ -68,7 +71,16 @@ namespace mCopernicus
 
         private void inputURLButton_Click(object sender, EventArgs e)
         {
+            Close();
+            new urlForm().Show();
+        }
 
+        public void urlInput(string method,string pass,string ip,string port)
+        {
+            textBoxIP.Text = ip;
+            textBoxPassWord.Text = pass;
+            methodBox.Text = method;
+            textBoxPort.Text = port;
         }
     }
 }
