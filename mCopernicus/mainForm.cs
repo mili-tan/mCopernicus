@@ -1,20 +1,27 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace mCopernicus
 {
-    public partial class Form1 : MaterialForm
+    public partial class mainForm : MaterialForm
     {
-        Process process = new Process();
-        public Form1()
+        Process process;
+        public mainForm()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void mianForm_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
 
@@ -31,6 +38,7 @@ namespace mCopernicus
 
         public void runSS(string ssFile, string cmdStr)
         {
+            process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = ssFile;
             startInfo.Arguments = cmdStr;
@@ -44,12 +52,20 @@ namespace mCopernicus
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!process.HasExited)
+            if (process != null)
             {
-                process.Kill();
+                if (!process.HasExited)
+                {
+                    process.Kill();
+                }
+                MessageBox.Show(process.StandardOutput.ReadToEnd().ToString());
+                process.Close();
             }
-            MessageBox.Show(process.StandardOutput.ReadToEnd().ToString());
-            process.Close();
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            new addForm().ShowDialog();
         }
     }
 }

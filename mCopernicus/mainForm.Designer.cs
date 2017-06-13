@@ -1,6 +1,6 @@
 ﻿namespace mCopernicus
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -61,6 +61,7 @@
             this.addButton.Size = new System.Drawing.Size(44, 36);
             this.addButton.TabIndex = 2;
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // startButton
             // 
@@ -80,7 +81,7 @@
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
-            // Form1
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -88,11 +89,11 @@
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.materialDivider1);
-            this.Name = "Form1";
+            this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCopernicus";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.mianForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
