@@ -14,7 +14,7 @@ namespace mCopernicus
 {
     public partial class urlForm : Form
     {
-        Color origin;
+        Color originColor;
         public urlForm()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace mCopernicus
             TopMost = true;
             MaximizeBox = false;
             MinimizeBox = false;
-            origin = BackColor;
+            originColor = BackColor;
         }
 
         private void urlButton_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace mCopernicus
             }
             catch (Exception)
             {
-                Text = "无效的SS URL";
+                Text = "从SS URL导入 : 无效";
                 BackColor = Color.LightPink;
             }
         }
@@ -48,7 +48,7 @@ namespace mCopernicus
         private void urlTextBox_MouseDown(object sender, MouseEventArgs e)
         {
             Text = "从SS URL导入";
-            BackColor = origin;
+            BackColor = originColor;
         }
     }
 }
