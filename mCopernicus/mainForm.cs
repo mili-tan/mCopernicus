@@ -33,7 +33,7 @@ namespace mCopernicus
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            runSS("./shadowsocks-libqss.exe", "-T");
+            runSS("./shadowsocks-libqss.exe", @"-c .\config\text.json");
         }
 
         public void runSS(string ssFile, string cmdStr)
