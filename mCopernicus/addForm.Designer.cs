@@ -49,10 +49,11 @@
             this.numericUpDownTimeOut = new System.Windows.Forms.NumericUpDown();
             this.checkBoxHTTPProxy = new System.Windows.Forms.CheckBox();
             this.checkBoxAuth = new System.Windows.Forms.CheckBox();
-            this.checkBoxDebugLog = new System.Windows.Forms.CheckBox();
             this.saveButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.inputURLButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.moreButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.basicPanel.SuspendLayout();
             this.highPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeOut)).BeginInit();
@@ -64,7 +65,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(-5, 378);
+            this.materialDivider1.Location = new System.Drawing.Point(-5, 408);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
             this.materialDivider1.Size = new System.Drawing.Size(380, 1);
@@ -117,6 +118,7 @@
             this.textBoxPassWord.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBoxPassWord.Location = new System.Drawing.Point(115, 69);
             this.textBoxPassWord.Name = "textBoxPassWord";
+            this.textBoxPassWord.PasswordChar = '●';
             this.textBoxPassWord.Size = new System.Drawing.Size(225, 27);
             this.textBoxPassWord.TabIndex = 7;
             // 
@@ -136,7 +138,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(3, 107);
+            this.label4.Location = new System.Drawing.Point(3, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 20);
             this.label4.TabIndex = 8;
@@ -160,7 +162,7 @@
             "RC4",
             "RC4-MD5",
             "SALSA20"});
-            this.methodBox.Location = new System.Drawing.Point(115, 103);
+            this.methodBox.Location = new System.Drawing.Point(115, 102);
             this.methodBox.Name = "methodBox";
             this.methodBox.Size = new System.Drawing.Size(225, 28);
             this.methodBox.TabIndex = 9;
@@ -172,6 +174,7 @@
             this.basicPanel.ColumnCount = 2;
             this.basicPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.74648F));
             this.basicPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.25352F));
+            this.basicPanel.Controls.Add(this.label8, 0, 4);
             this.basicPanel.Controls.Add(this.label1, 0, 0);
             this.basicPanel.Controls.Add(this.methodBox, 1, 3);
             this.basicPanel.Controls.Add(this.textBoxIP, 1, 0);
@@ -180,21 +183,23 @@
             this.basicPanel.Controls.Add(this.textBoxPassWord, 1, 2);
             this.basicPanel.Controls.Add(this.textBoxPort, 1, 1);
             this.basicPanel.Controls.Add(this.label3, 0, 2);
+            this.basicPanel.Controls.Add(this.textBoxName, 1, 4);
             this.basicPanel.Location = new System.Drawing.Point(12, 11);
             this.basicPanel.Name = "basicPanel";
-            this.basicPanel.RowCount = 4;
-            this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.basicPanel.Size = new System.Drawing.Size(343, 135);
+            this.basicPanel.RowCount = 5;
+            this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.basicPanel.Size = new System.Drawing.Size(343, 167);
             this.basicPanel.TabIndex = 10;
             // 
             // highDivider
             // 
             this.highDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.highDivider.Depth = 0;
-            this.highDivider.Location = new System.Drawing.Point(-5, 154);
+            this.highDivider.Location = new System.Drawing.Point(-5, 188);
             this.highDivider.MouseState = MaterialSkin.MouseState.HOVER;
             this.highDivider.Name = "highDivider";
             this.highDivider.Size = new System.Drawing.Size(390, 1);
@@ -215,8 +220,7 @@
             this.highPanel.Controls.Add(this.numericUpDownTimeOut, 1, 2);
             this.highPanel.Controls.Add(this.checkBoxHTTPProxy, 1, 3);
             this.highPanel.Controls.Add(this.checkBoxAuth, 1, 4);
-            this.highPanel.Controls.Add(this.checkBoxDebugLog, 1, 5);
-            this.highPanel.Location = new System.Drawing.Point(12, 161);
+            this.highPanel.Location = new System.Drawing.Point(12, 198);
             this.highPanel.Name = "highPanel";
             this.highPanel.RowCount = 6;
             this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -324,18 +328,6 @@
             this.checkBoxAuth.Text = "一次验证";
             this.checkBoxAuth.UseVisualStyleBackColor = true;
             // 
-            // checkBoxDebugLog
-            // 
-            this.checkBoxDebugLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxDebugLog.AutoSize = true;
-            this.checkBoxDebugLog.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.checkBoxDebugLog.Location = new System.Drawing.Point(115, 171);
-            this.checkBoxDebugLog.Name = "checkBoxDebugLog";
-            this.checkBoxDebugLog.Size = new System.Drawing.Size(225, 24);
-            this.checkBoxDebugLog.TabIndex = 12;
-            this.checkBoxDebugLog.Text = "调试级别日志";
-            this.checkBoxDebugLog.UseVisualStyleBackColor = true;
-            // 
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -343,7 +335,7 @@
             this.saveButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.saveButton.Depth = 0;
             this.saveButton.Icon = null;
-            this.saveButton.Location = new System.Drawing.Point(299, 388);
+            this.saveButton.Location = new System.Drawing.Point(299, 418);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.saveButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveButton.Name = "saveButton";
@@ -352,6 +344,7 @@
             this.saveButton.TabIndex = 13;
             this.saveButton.Text = "保存";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // inputURLButton
             // 
@@ -360,7 +353,7 @@
             this.inputURLButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.inputURLButton.Depth = 0;
             this.inputURLButton.Icon = global::mCopernicus.Properties.Resources.link;
-            this.inputURLButton.Location = new System.Drawing.Point(64, 388);
+            this.inputURLButton.Location = new System.Drawing.Point(64, 418);
             this.inputURLButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.inputURLButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.inputURLButton.Name = "inputURLButton";
@@ -377,7 +370,7 @@
             this.moreButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.moreButton.Depth = 0;
             this.moreButton.Icon = ((System.Drawing.Image)(resources.GetObject("moreButton.Icon")));
-            this.moreButton.Location = new System.Drawing.Point(12, 388);
+            this.moreButton.Location = new System.Drawing.Point(12, 418);
             this.moreButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.moreButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.moreButton.Name = "moreButton";
@@ -387,11 +380,31 @@
             this.moreButton.UseVisualStyleBackColor = true;
             this.moreButton.Click += new System.EventHandler(this.moreButton_Click);
             // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(3, 140);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(106, 20);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "配置名称";
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxName.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxName.Location = new System.Drawing.Point(115, 136);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(225, 27);
+            this.textBoxName.TabIndex = 11;
+            // 
             // addForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 433);
+            this.ClientSize = new System.Drawing.Size(367, 463);
             this.Controls.Add(this.inputURLButton);
             this.Controls.Add(this.moreButton);
             this.Controls.Add(this.saveButton);
@@ -431,7 +444,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownTimeOut;
         private System.Windows.Forms.CheckBox checkBoxHTTPProxy;
         private System.Windows.Forms.CheckBox checkBoxAuth;
-        private System.Windows.Forms.CheckBox checkBoxDebugLog;
         private MaterialSkin.Controls.MaterialFlatButton saveButton;
         private MaterialSkin.Controls.MaterialFlatButton moreButton;
         private MaterialSkin.Controls.MaterialFlatButton inputURLButton;
@@ -439,5 +451,7 @@
         public System.Windows.Forms.TextBox textBoxPort;
         public System.Windows.Forms.TextBox textBoxPassWord;
         public System.Windows.Forms.ComboBox methodBox;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox textBoxName;
     }
 }

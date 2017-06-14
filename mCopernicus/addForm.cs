@@ -9,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace mCopernicus
 {
     public partial class addForm : Form
     {
-        class SeverInfo 
+        class ServerInfo
         {
             public string server { get; set; } 
             public int server_port { get; set; }
@@ -75,12 +77,21 @@ namespace mCopernicus
             new urlForm().Show();
         }
 
-        public void urlInput(string method,string pass,string ip,string port)
+        ServerInfo serverInfo = new ServerInfo();
+
+        private void saveButton_Click(object sender, EventArgs e)
         {
-            textBoxIP.Text = ip;
-            textBoxPassWord.Text = pass;
-            methodBox.Text = method;
-            textBoxPort.Text = port;
+            serverInfo.server = textBoxIP.Text;
+            serverInfo.server_port = Convert.ToInt32(textBoxPort.Text);
+            serverInfo.local_address = textBoxLocalIP.Text;
+            serverInfo.local_port = Convert.ToInt32(textBoxLoaclPort.Text);
+            serverInfo.password = textBoxPassWord.Text;
+            serverInfo.timeout = Convert.ToInt32(numericUpDownTimeOut.Value);
+            serverInfo.method = methodBox.Text;
+            serverInfo.http_proxy = checkBoxHTTPProxy.Checked;
+            serverInfo.auth = checkBoxAuth.Checked;
+            string linkJson = JsonConvert.SerializeObject(serverInfo);
+            File.WriteAllText(string.Format("./config/{0}.json", textBoxName.Text),linkJson);
         }
     }
 }
