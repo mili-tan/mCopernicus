@@ -104,6 +104,7 @@
             this.mlListView.TabIndex = 3;
             this.mlListView.UseCompatibleStateImageBehavior = false;
             this.mlListView.View = System.Windows.Forms.View.Details;
+            this.mlListView.SelectedIndexChanged += new System.EventHandler(this.mlListView_SelectedIndexChanged);
             // 
             // columnHeader
             // 

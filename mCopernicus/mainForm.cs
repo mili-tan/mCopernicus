@@ -47,7 +47,23 @@ namespace mCopernicus
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            runSS("./shadowsocks-libqss.exe", @"-c .\config\text.json");
+            ListView.SelectedIndexCollection selectedIndex = null;
+            string fileName = null;
+            if (mlListView.SelectedIndices != null && mlListView.SelectedIndices.Count > 0)
+            {
+                selectedIndex = mlListView.SelectedIndices;
+                fileName = mlListView.Items[selectedIndex[0]].Text;
+            }
+            if (fileName == null || fileName == "")
+            {
+                MessageBox.Show("请选择您的连接", "mCopernicus", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                runSS("./shadowsocks-libqss.exe", string.Format(@"{0} .\config\{1}.json", "-c", fileName));
+                mlListView.Items[selectedIndex[0]].Selected = true;
+                mlListView.Items[selectedIndex[0]].Focused = true;
+            }
         }
 
         public void runSS(string ssFile, string cmdStr)
@@ -80,6 +96,11 @@ namespace mCopernicus
         private void addButton_Click(object sender, EventArgs e)
         {
             new addForm(null,null,null,null).ShowDialog();
+        }
+
+        private void mlListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
