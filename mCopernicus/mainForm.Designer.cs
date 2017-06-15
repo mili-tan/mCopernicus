@@ -31,6 +31,8 @@
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.addButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.startButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.mlListView = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // materialDivider1
@@ -81,11 +83,39 @@
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
+            // mlListView
+            // 
+            this.mlListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mlListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mlListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader});
+            this.mlListView.Depth = 0;
+            this.mlListView.Font = new System.Drawing.Font("Microsoft YaHei UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(134)));
+            this.mlListView.FullRowSelect = true;
+            this.mlListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.mlListView.Location = new System.Drawing.Point(1, 65);
+            this.mlListView.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mlListView.MouseState = MaterialSkin.MouseState.OUT;
+            this.mlListView.Name = "mlListView";
+            this.mlListView.OwnerDraw = true;
+            this.mlListView.Size = new System.Drawing.Size(398, 470);
+            this.mlListView.TabIndex = 3;
+            this.mlListView.UseCompatibleStateImageBehavior = false;
+            this.mlListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader
+            // 
+            this.columnHeader.Text = "连接列表";
+            this.columnHeader.Width = 396;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 600);
+            this.Controls.Add(this.mlListView);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.materialDivider1);
@@ -104,6 +134,8 @@
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialFlatButton startButton;
         private MaterialSkin.Controls.MaterialFlatButton addButton;
+        private MaterialSkin.Controls.MaterialListView mlListView;
+        private System.Windows.Forms.ColumnHeader columnHeader;
     }
 }
 

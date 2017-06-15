@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +22,22 @@ namespace mCopernicus
             InitializeComponent();
         }
 
+        class SSParameter
+        {
+            public string ConfigFile = "-c ";
+
+        }
+
         private void mianForm_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
+
+            DirectoryInfo folder = new DirectoryInfo(@"./config");
+
+            foreach (FileInfo file in folder.GetFiles("*.json"))
+            {
+                mlListView.Items.Add(file.Name.Replace(".json",""));
+            }
 
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
