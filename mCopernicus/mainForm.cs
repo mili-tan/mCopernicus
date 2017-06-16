@@ -25,11 +25,11 @@ namespace mCopernicus
         class SSParameter
         {
             public string ConfigFile = "-c ";
-
         }
 
         private void mianForm_Load(object sender, EventArgs e)
         {
+            UrlReg.Reg("ss");
             MaximizeBox = false;
 
             DirectoryInfo folder = new DirectoryInfo(@"./config");
@@ -61,8 +61,6 @@ namespace mCopernicus
             else
             {
                 runSS("./shadowsocks-libqss.exe", string.Format(@"{0} .\config\{1}.json", "-c", fileName));
-                mlListView.Items[selectedIndex[0]].Selected = true;
-                mlListView.Items[selectedIndex[0]].Focused = true;
             }
         }
 
@@ -91,6 +89,7 @@ namespace mCopernicus
                 MessageBox.Show(process.StandardOutput.ReadToEnd().ToString());
                 process.Close();
             }
+            UrlReg.UnReg("ss");
         }
 
         private void addButton_Click(object sender, EventArgs e)

@@ -12,11 +12,18 @@ namespace mCopernicus
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainForm());
+            if (!string.IsNullOrWhiteSpace(string.Join("", args)))
+            {
+                Application.Run(new urlForm(string.Join("", args)));
+            }
+            else
+            {
+                Application.Run(new mainForm());
+            }
         }
     }
 }

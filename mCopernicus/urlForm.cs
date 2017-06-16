@@ -15,9 +15,13 @@ namespace mCopernicus
     public partial class urlForm : Form
     {
         Color originColor;
-        public urlForm()
+        public urlForm(string linkString)
         {
             InitializeComponent();
+            if (!string.IsNullOrEmpty(linkString))
+            {
+                urlTextBox.Text = linkString;
+            }
         }
 
         private void urlForm_Load(object sender, EventArgs e)
@@ -32,7 +36,7 @@ namespace mCopernicus
         {
             try
             {
-                string[] linkInfo = SSURL.Parse(urlTextBox.Text);
+                string[] linkInfo = SSURL.Parse(urlTextBox.Text.Replace("ss://","").Replace("/",""));
                 addForm addForm = new addForm(linkInfo[0], linkInfo[1], linkInfo[2], linkInfo[3]);
                 Hide();
                 addForm.ShowDialog();

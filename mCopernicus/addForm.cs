@@ -74,24 +74,31 @@ namespace mCopernicus
         private void inputURLButton_Click(object sender, EventArgs e)
         {
             Close();
-            new urlForm().Show();
+            new urlForm(null).Show();
         }
 
         ServerInfo serverInfo = new ServerInfo();
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            serverInfo.server = textBoxIP.Text;
-            serverInfo.server_port = Convert.ToInt32(textBoxPort.Text);
-            serverInfo.local_address = textBoxLocalIP.Text;
-            serverInfo.local_port = Convert.ToInt32(textBoxLoaclPort.Text);
-            serverInfo.password = textBoxPassWord.Text;
-            serverInfo.timeout = Convert.ToInt32(numericUpDownTimeOut.Value);
-            serverInfo.method = methodBox.Text;
-            serverInfo.http_proxy = checkBoxHTTPProxy.Checked;
-            serverInfo.auth = checkBoxAuth.Checked;
-            string linkJson = JsonConvert.SerializeObject(serverInfo);
-            File.WriteAllText(string.Format("./config/{0}.json", textBoxName.Text),linkJson);
+            if (string.IsNullOrEmpty(textBoxIP.Text) || string.IsNullOrEmpty(textBoxPassWord.Text) || string.IsNullOrEmpty(textBoxLoaclPort.Text) || string.IsNullOrEmpty(textBoxName.Text))
+            {
+                MessageBox.Show("请确保所有内容以键入", "mCopernicus", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                serverInfo.server = textBoxIP.Text;
+                serverInfo.server_port = Convert.ToInt32(textBoxPort.Text);
+                serverInfo.local_address = textBoxLocalIP.Text;
+                serverInfo.local_port = Convert.ToInt32(textBoxLoaclPort.Text);
+                serverInfo.password = textBoxPassWord.Text;
+                serverInfo.timeout = Convert.ToInt32(numericUpDownTimeOut.Value);
+                serverInfo.method = methodBox.Text;
+                serverInfo.http_proxy = checkBoxHTTPProxy.Checked;
+                serverInfo.auth = checkBoxAuth.Checked;
+                string linkJson = JsonConvert.SerializeObject(serverInfo);
+                File.WriteAllText(string.Format("./config/{0}.json", textBoxName.Text), linkJson);
+            }
         }
     }
 }
