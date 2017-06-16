@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.addButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.startButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.mlListView = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timerRefresh = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // materialDivider1
@@ -104,12 +106,17 @@
             this.mlListView.TabIndex = 3;
             this.mlListView.UseCompatibleStateImageBehavior = false;
             this.mlListView.View = System.Windows.Forms.View.Details;
-            this.mlListView.SelectedIndexChanged += new System.EventHandler(this.mlListView_SelectedIndexChanged);
             // 
             // columnHeader
             // 
             this.columnHeader.Text = "连接列表";
             this.columnHeader.Width = 396;
+            // 
+            // timerRefresh
+            // 
+            this.timerRefresh.Enabled = true;
+            this.timerRefresh.Interval = 30000;
+            this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
             // 
             // mainForm
             // 
@@ -123,6 +130,7 @@
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCopernicus";
+            this.Activated += new System.EventHandler(this.mainForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.mianForm_Load);
             this.ResumeLayout(false);
@@ -137,6 +145,7 @@
         private MaterialSkin.Controls.MaterialFlatButton addButton;
         private MaterialSkin.Controls.MaterialListView mlListView;
         private System.Windows.Forms.ColumnHeader columnHeader;
+        private System.Windows.Forms.Timer timerRefresh;
     }
 }
 

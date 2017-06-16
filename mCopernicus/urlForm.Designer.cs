@@ -61,7 +61,7 @@
             this.urlTextBox.SelectedText = "";
             this.urlTextBox.SelectionLength = 0;
             this.urlTextBox.SelectionStart = 0;
-            this.urlTextBox.Size = new System.Drawing.Size(302, 30);
+            this.urlTextBox.Size = new System.Drawing.Size(302, 29);
             this.urlTextBox.TabIndex = 0;
             this.urlTextBox.TabStop = false;
             this.urlTextBox.UseSystemPasswordChar = false;

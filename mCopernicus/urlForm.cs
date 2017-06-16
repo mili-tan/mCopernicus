@@ -52,7 +52,6 @@ namespace mCopernicus
         private void urlTextBox_MouseDown(object sender, MouseEventArgs e)
         {
             Text = "从SS URL导入";
-            BackColor = originColor;
         }
     }
 }

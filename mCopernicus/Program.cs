@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace mCopernicus
             if (!string.IsNullOrWhiteSpace(string.Join("", args)))
             {
                 Application.Run(new urlForm(string.Join("", args)));
+                MessageBox.Show(Application.StartupPath);
             }
             else
             {

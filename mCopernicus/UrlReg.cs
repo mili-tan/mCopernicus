@@ -17,7 +17,7 @@ namespace mCopernicus
             RegistryKey openKey = shellKey.CreateSubKey("open");
             RegistryKey commandKey = openKey.CreateSubKey("command");
             surekamKey.SetValue("URL Protocol", "");
-            var exePath = Process.GetCurrentProcess().MainModule.FileName;
+            string exePath = Process.GetCurrentProcess().MainModule.FileName;
             commandKey.SetValue("", "\"" + exePath + "\"" + " \"%1\"");
         }
         public static void UnReg(string point)

@@ -17,6 +17,7 @@ namespace mCopernicus
     public partial class mainForm : MaterialForm
     {
         Process process;
+        DirectoryInfo folder;
         public mainForm()
         {
             InitializeComponent();
@@ -32,11 +33,11 @@ namespace mCopernicus
             UrlReg.Reg("ss");
             MaximizeBox = false;
 
-            DirectoryInfo folder = new DirectoryInfo(@"./config");
+            folder = new DirectoryInfo(string.Format(@"{0}/config", Application.StartupPath));
 
             foreach (FileInfo file in folder.GetFiles("*.json"))
             {
-                mlListView.Items.Add(file.Name.Replace(".json",""));
+                mlListView.Items.Add(file.Name.Replace(".json", ""));
             }
 
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -94,12 +95,30 @@ namespace mCopernicus
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            new addForm(null,null,null,null).ShowDialog();
+            new addForm(null, null, null, null).ShowDialog();
+            mlListView.Items.Clear();
+            foreach (FileInfo file in folder.GetFiles("*.json"))
+            {
+                mlListView.Items.Add(file.Name.Replace(".json", ""));
+            }
         }
 
-        private void mlListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void timerRefresh_Tick(object sender, EventArgs e)
         {
+            mlListView.Items.Clear();
+            foreach (FileInfo file in folder.GetFiles("*.json"))
+            {
+                mlListView.Items.Add(file.Name.Replace(".json", ""));
+            }
+        }
 
+        private void mainForm_Activated(object sender, EventArgs e)
+        {
+            mlListView.Items.Clear();
+            foreach (FileInfo file in folder.GetFiles("*.json"))
+            {
+                mlListView.Items.Add(file.Name.Replace(".json", ""));
+            }
         }
     }
 }

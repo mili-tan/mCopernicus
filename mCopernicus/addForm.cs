@@ -81,9 +81,15 @@ namespace mCopernicus
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            textBoxName.Text = textBoxName.Text.Trim();
+            string[] strCodes = textBoxName.Text.Split(' ');
             if (string.IsNullOrEmpty(textBoxIP.Text) || string.IsNullOrEmpty(textBoxPassWord.Text) || string.IsNullOrEmpty(textBoxLoaclPort.Text) || string.IsNullOrEmpty(textBoxName.Text))
             {
                 MessageBox.Show("请确保所有内容以键入", "mCopernicus", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(strCodes.Length > 1)
+            {
+                MessageBox.Show("配置名称不可包含空格", "mCopernicus", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -97,7 +103,9 @@ namespace mCopernicus
                 serverInfo.http_proxy = checkBoxHTTPProxy.Checked;
                 serverInfo.auth = checkBoxAuth.Checked;
                 string linkJson = JsonConvert.SerializeObject(serverInfo);
-                File.WriteAllText(string.Format("./config/{0}.json", textBoxName.Text), linkJson);
+                File.WriteAllText(string.Format("{0}/config/{1}.json", Application.StartupPath, textBoxName.Text), linkJson);
+                MessageBox.Show("保存成功！");
+                this.Close();
             }
         }
     }

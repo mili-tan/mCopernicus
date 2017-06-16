@@ -39,6 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.methodBox = new System.Windows.Forms.ComboBox();
             this.basicPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.highDivider = new MaterialSkin.Controls.MaterialDivider();
             this.highPanel = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,8 +54,6 @@
             this.saveButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.inputURLButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.moreButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
             this.basicPanel.SuspendLayout();
             this.highPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeOut)).BeginInit();
@@ -194,6 +194,26 @@
             this.basicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.basicPanel.Size = new System.Drawing.Size(343, 167);
             this.basicPanel.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(3, 140);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(106, 20);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "配置名称";
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxName.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxName.Location = new System.Drawing.Point(115, 136);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(225, 27);
+            this.textBoxName.TabIndex = 11;
             // 
             // highDivider
             // 
@@ -379,26 +399,6 @@
             this.moreButton.TabIndex = 14;
             this.moreButton.UseVisualStyleBackColor = true;
             this.moreButton.Click += new System.EventHandler(this.moreButton_Click);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(3, 140);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 20);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "配置名称";
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxName.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxName.Location = new System.Drawing.Point(115, 136);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(225, 27);
-            this.textBoxName.TabIndex = 11;
             // 
             // addForm
             // 
