@@ -30,9 +30,12 @@ namespace mCopernicus
         }
 
         ServerInfo serverInfoFile;
+        bool editBool = false;
+        string fileNameSource;
 
         public addForm(string method, string pass, string ip, string port, string fileName)
         {
+            fileNameSource = fileName;
             InitializeComponent();
             methodBox.SelectedIndex = 2;
             highDivider.Hide();
@@ -41,6 +44,9 @@ namespace mCopernicus
             if (fileName != null)
             {
                 Text = Text + " : 编辑 - " + fileName;
+                inputURLButton.Hide();
+                delButton.Show();
+                editBool = true;
                 string jsonFileStr = File.ReadAllText(string.Format("{0}/config/{1}.json", Application.StartupPath, fileName));
                 serverInfoFile = JsonConvert.DeserializeObject<ServerInfo>(jsonFileStr);
                 textBoxIP.Text = serverInfoFile.server;
@@ -104,6 +110,10 @@ namespace mCopernicus
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            if (editBool == true)
+            {
+                File.Delete(string.Format("{0}/config/{1}.json", Application.StartupPath, fileNameSource));
+            }
             textBoxName.Text = textBoxName.Text.Trim();
             string[] strCodes = textBoxName.Text.Split(' ');
             if (string.IsNullOrEmpty(textBoxIP.Text) || string.IsNullOrEmpty(textBoxPassWord.Text) || string.IsNullOrEmpty(textBoxLoaclPort.Text) || string.IsNullOrEmpty(textBoxName.Text))
@@ -128,8 +138,16 @@ namespace mCopernicus
                 string linkJson = JsonConvert.SerializeObject(serverInfo);
                 File.WriteAllText(string.Format("{0}/config/{1}.json", Application.StartupPath, textBoxName.Text), linkJson);
                 MessageBox.Show("保存成功！");
-                this.Close();
+                Close();
             }
+        }
+
+        private void delButton_Click(object sender, EventArgs e)
+        {
+            File.Delete(string.Format("{0}/config/{1}.json", Application.StartupPath, fileNameSource));
+            fileNameSource = null;
+            MessageBox.Show("您所选的连接已删除。");
+            Close();
         }
     }
 }

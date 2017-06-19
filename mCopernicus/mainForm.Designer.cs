@@ -178,6 +178,7 @@
             this.Activated += new System.EventHandler(this.mainForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.mianForm_Load);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mainForm_MouseDoubleClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 

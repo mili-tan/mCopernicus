@@ -15,14 +15,16 @@ namespace mCopernicus
         [STAThread]
         static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
             if (!string.IsNullOrWhiteSpace(string.Join("", args)))
             {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new urlForm(string.Join("", args)));
             }
             else
             {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new mainForm());
             }
         }

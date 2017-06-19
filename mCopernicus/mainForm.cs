@@ -18,9 +18,16 @@ namespace mCopernicus
     {
         Process process;
         DirectoryInfo folder;
+        string logStr = null;
         public mainForm()
         {
             InitializeComponent();
+            Process[] processes = Process.GetProcessesByName(Application.CompanyName);
+            if (processes.Length > 1)
+            {
+                MessageBox.Show("已有一个mCopernicus实例正在运行,请不要重复启动", "mCopernicus", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Environment.Exit(1);
+            }
         }
 
         class SSParameter
@@ -87,7 +94,8 @@ namespace mCopernicus
                 {
                     process.Kill();
                 }
-                MessageBox.Show(process.StandardOutput.ReadToEnd().ToString());
+                logStr = logStr + process.StandardOutput.ReadToEnd().ToString();
+                File.WriteAllText(string.Format("{0}/m.log", Application.StartupPath), string.Format("{0}\n\r{1}", DateTime.Now.ToString(), logStr));
                 process.Close();
             }
             UrlReg.UnReg("ss");
@@ -95,7 +103,7 @@ namespace mCopernicus
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            new addForm(null, null, null, null,null).ShowDialog();
+            new addForm(null, null, null, null, null).ShowDialog();
             mlListView.Items.Clear();
             foreach (FileInfo file in folder.GetFiles("*.json"))
             {
@@ -143,6 +151,15 @@ namespace mCopernicus
                 fileName = mlListView.Items[selectedIndex[0]].Text;
             }
             new addForm(null, null, null, null, fileName).ShowDialog();
+        }
+
+        private void mainForm_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (process != null)
+            {
+                //logStr = logStr + process.StandardOutput.ReadToEnd().ToString();
+                //MessageBox.Show(logStr);
+            }
         }
     }
 }
