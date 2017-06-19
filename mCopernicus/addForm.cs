@@ -29,18 +29,32 @@ namespace mCopernicus
             public bool auth { get; set; }
         }
 
-        public addForm(string method, string pass, string ip, string port)
+        ServerInfo serverInfoFile;
+
+        public addForm(string method, string pass, string ip, string port, string fileName)
         {
             InitializeComponent();
             highDivider.Hide();
             highPanel.Hide();
             Height = Height - 220;
-            if (method != null)
+            if (fileName != null)
             {
+                Text = Text + " : 编辑 - " + fileName;
+                string jsonFileStr = File.ReadAllText(string.Format("{0}/config/{1}.json", Application.StartupPath, fileName));
+                serverInfoFile = JsonConvert.DeserializeObject<ServerInfo>(jsonFileStr);
+
+            }
+            else if (method != null)
+            {
+                Text = Text + " : 新建";
                 textBoxIP.Text = ip;
                 textBoxPassWord.Text = pass;
                 methodBox.Text = method;
                 textBoxPort.Text = port;
+            }
+            else
+            {
+                Text = Text + " : 新建";
             }
         }
 

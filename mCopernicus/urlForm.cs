@@ -37,7 +37,7 @@ namespace mCopernicus
             try
             {
                 string[] linkInfo = SSURL.Parse(urlTextBox.Text.Replace("ss://","").Replace("/",""));
-                addForm addForm = new addForm(linkInfo[0], linkInfo[1], linkInfo[2], linkInfo[3]);
+                addForm addForm = new addForm(linkInfo[0], linkInfo[1], linkInfo[2], linkInfo[3],null);
                 Hide();
                 addForm.ShowDialog();
                 Close();

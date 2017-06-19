@@ -61,7 +61,7 @@ namespace mCopernicus
             }
             else
             {
-                runSS("./shadowsocks-libqss.exe", string.Format(@"{0} .\config\{1}.json", "-c", fileName));
+                runSS("./shadowsocks-libqss.exe", string.Format("-c {0}/config/{1}.json", Application.StartupPath, fileName));
             }
         }
 
@@ -95,7 +95,7 @@ namespace mCopernicus
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            new addForm(null, null, null, null).ShowDialog();
+            new addForm(null, null, null, null,null).ShowDialog();
             mlListView.Items.Clear();
             foreach (FileInfo file in folder.GetFiles("*.json"))
             {
@@ -119,6 +119,30 @@ namespace mCopernicus
             {
                 mlListView.Items.Add(file.Name.Replace(".json", ""));
             }
+        }
+
+        private void timerCheckSelect_Tick(object sender, EventArgs e)
+        {
+            if (mlListView.SelectedItems.Count > 0)
+            {
+                editButton.Enabled = true;
+            }
+            else
+            {
+                editButton.Enabled = false;
+            }
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedIndexCollection selectedIndex = null;
+            string fileName = null;
+            if (mlListView.SelectedIndices != null && mlListView.SelectedIndices.Count > 0)
+            {
+                selectedIndex = mlListView.SelectedIndices;
+                fileName = mlListView.Items[selectedIndex[0]].Text;
+            }
+            new addForm(null, null, null, null, fileName).ShowDialog();
         }
     }
 }

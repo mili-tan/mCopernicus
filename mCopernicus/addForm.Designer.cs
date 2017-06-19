@@ -414,7 +414,7 @@
             this.Controls.Add(this.materialDivider1);
             this.Name = "addForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "新建连接";
+            this.Text = "编辑连接";
             this.Load += new System.EventHandler(this.addForm_Load);
             this.basicPanel.ResumeLayout(false);
             this.basicPanel.PerformLayout();
