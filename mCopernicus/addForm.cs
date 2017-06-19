@@ -34,6 +34,7 @@ namespace mCopernicus
         public addForm(string method, string pass, string ip, string port, string fileName)
         {
             InitializeComponent();
+            methodBox.SelectedIndex = 2;
             highDivider.Hide();
             highPanel.Hide();
             Height = Height - 220;
@@ -42,7 +43,16 @@ namespace mCopernicus
                 Text = Text + " : 编辑 - " + fileName;
                 string jsonFileStr = File.ReadAllText(string.Format("{0}/config/{1}.json", Application.StartupPath, fileName));
                 serverInfoFile = JsonConvert.DeserializeObject<ServerInfo>(jsonFileStr);
-
+                textBoxIP.Text = serverInfoFile.server;
+                textBoxPort.Text = serverInfoFile.server_port.ToString();
+                textBoxLocalIP.Text = serverInfoFile.local_address;
+                textBoxLoaclPort.Text = serverInfoFile.local_port.ToString();
+                textBoxPassWord.Text = serverInfoFile.password;
+                numericUpDownTimeOut.Value = serverInfoFile.timeout;
+                methodBox.Text = serverInfoFile.method;
+                checkBoxHTTPProxy.Checked = serverInfoFile.http_proxy;
+                checkBoxAuth.Checked = serverInfoFile.auth;
+                textBoxName.Text = fileName;
             }
             else if (method != null)
             {
@@ -61,7 +71,6 @@ namespace mCopernicus
         private void addForm_Load(object sender, EventArgs e)
         {
             //TopMost = true;
-            methodBox.SelectedIndex = 2;
             MaximizeBox = false;
             MinimizeBox = false;
         }
