@@ -93,6 +93,16 @@ namespace mCopernicus.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap exit_to_app {
+            get {
+                object obj = ResourceManager.GetObject("exit-to-app", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap file_plus {
             get {
                 object obj = ResourceManager.GetObject("file-plus", resourceCulture);

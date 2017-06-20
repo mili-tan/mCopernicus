@@ -29,15 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.mlListView = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
+            this.timerCheckSelect = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.setButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.editButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.addButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.startButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.timerCheckSelect = new System.Windows.Forms.Timer(this.components);
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialDivider1
@@ -85,6 +92,41 @@
             this.timerRefresh.Enabled = true;
             this.timerRefresh.Interval = 30000;
             this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
+            // 
+            // timerCheckSelect
+            // 
+            this.timerCheckSelect.Enabled = true;
+            this.timerCheckSelect.Interval = 1000;
+            this.timerCheckSelect.Tick += new System.EventHandler(this.timerCheckSelect_Tick);
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.ContextMenuStrip = this.contextMenuStrip;
+            this.notifyIcon.Text = "mCopernicus";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.exitToolStripMenuItem});
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            this.contextMenuStrip.Size = new System.Drawing.Size(113, 62);
+            // 
+            // showToolStripMenuItem
+            // 
+            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(112, 26);
+            this.showToolStripMenuItem.Text = "还原";
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(109, 6);
             // 
             // setButton
             // 
@@ -155,11 +197,13 @@
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
-            // timerCheckSelect
+            // exitToolStripMenuItem
             // 
-            this.timerCheckSelect.Enabled = true;
-            this.timerCheckSelect.Interval = 1000;
-            this.timerCheckSelect.Tick += new System.EventHandler(this.timerCheckSelect_Tick);
+            this.exitToolStripMenuItem.Image = global::mCopernicus.Properties.Resources.exit_to_app;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 26);
+            this.exitToolStripMenuItem.Text = "退出";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -172,13 +216,16 @@
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.materialDivider1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCopernicus";
             this.Activated += new System.EventHandler(this.mainForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.mianForm_Load);
+            this.SizeChanged += new System.EventHandler(this.mainForm_SizeChanged);
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mainForm_MouseDoubleClick);
+            this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,6 +242,11 @@
         private MaterialSkin.Controls.MaterialFlatButton editButton;
         private MaterialSkin.Controls.MaterialFlatButton setButton;
         private System.Windows.Forms.Timer timerCheckSelect;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 

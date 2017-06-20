@@ -78,6 +78,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="setForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="setForm.Designer.cs">
+      <DependentUpon>setForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="urlForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="setForm.resx">
+      <DependentUpon>setForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="urlForm.resx">
       <DependentUpon>urlForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-to-app.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

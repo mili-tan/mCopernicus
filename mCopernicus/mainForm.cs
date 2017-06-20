@@ -16,6 +16,7 @@ namespace mCopernicus
 {
     public partial class mainForm : MaterialForm
     {
+        Icon mIco = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         Process process;
         DirectoryInfo folder;
         string logStr = null;
@@ -28,6 +29,9 @@ namespace mCopernicus
                 MessageBox.Show("已有一个mCopernicus实例正在运行,请不要重复启动", "mCopernicus", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Environment.Exit(1);
             }
+
+            notifyIcon.Icon = mIco;
+            notifyIcon.Visible = false;
         }
 
         class SSParameter
@@ -95,6 +99,7 @@ namespace mCopernicus
                     process.Kill();
                 }
                 logStr = logStr + process.StandardOutput.ReadToEnd().ToString();
+                MessageBox.Show(logStr);
                 File.WriteAllText(string.Format("{0}/m.log", Application.StartupPath), string.Format("{0}\n\r{1}", DateTime.Now.ToString(), logStr));
                 process.Close();
             }
@@ -160,6 +165,36 @@ namespace mCopernicus
                 //logStr = logStr + process.StandardOutput.ReadToEnd().ToString();
                 //MessageBox.Show(logStr);
             }
+        }
+
+        private void mainForm_SizeChanged(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                ShowInTaskbar = false;
+                notifyIcon.Visible = true;
+            }
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                WindowState = FormWindowState.Normal;
+                Activate();
+                ShowInTaskbar = true;
+                notifyIcon.Visible = false;
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void showToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            notifyIcon_MouseDoubleClick(null, null);
         }
     }
 }
