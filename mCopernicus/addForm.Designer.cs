@@ -434,6 +434,7 @@
             this.Controls.Add(this.highDivider);
             this.Controls.Add(this.basicPanel);
             this.Controls.Add(this.materialDivider1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "addForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "编辑连接";

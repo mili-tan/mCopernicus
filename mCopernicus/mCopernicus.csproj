@@ -40,6 +40,9 @@
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mCopernicus.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Copernicus.SSURL">
       <HintPath>..\..\..\Library\Copernicus.SSURL.dll</HintPath>
@@ -162,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit-to-app.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mCopernicus.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

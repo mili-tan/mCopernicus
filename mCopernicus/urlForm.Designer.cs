@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(urlForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.urlTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.urlButton = new MaterialSkin.Controls.MaterialFlatButton();
@@ -89,6 +90,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 73);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "urlForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "从SS URL导入";
