@@ -10,19 +10,19 @@ namespace mCopernicus
 {
     class UrlReg
     {
-        public static void Reg(string point)
+        public static void Reg(string urlLink)
         {
-            RegistryKey surekamKey = Registry.ClassesRoot.CreateSubKey(point);
-            RegistryKey shellKey = surekamKey.CreateSubKey("shell");
-            RegistryKey openKey = shellKey.CreateSubKey("open");
-            RegistryKey commandKey = openKey.CreateSubKey("command");
-            surekamKey.SetValue("URL Protocol", "");
-            string exePath = Process.GetCurrentProcess().MainModule.FileName;
-            commandKey.SetValue("", "\"" + exePath + "\"" + " \"%1\"");
+            RegistryKey regKey = Registry.ClassesRoot.CreateSubKey(urlLink);
+            RegistryKey cmdKey = regKey.CreateSubKey("shell");
+            cmdKey = cmdKey.CreateSubKey("open");
+            cmdKey = cmdKey.CreateSubKey("command");
+            regKey.SetValue("URL Protocol", "");
+            string filePath = Process.GetCurrentProcess().MainModule.FileName;
+            cmdKey.SetValue("", "\"" + filePath + "\"" + " \"%1\"");
         }
-        public static void UnReg(string point)
+        public static void UnReg(string urlLink)
         {
-            Registry.ClassesRoot.DeleteSubKeyTree(point);
+            Registry.ClassesRoot.DeleteSubKeyTree(urlLink);
         }
     }
 }
