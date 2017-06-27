@@ -44,9 +44,20 @@ namespace mCopernicus
             UrlReg.Reg("ss");
             MaximizeBox = false;
 
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey500, Primary.BlueGrey700, Primary.BlueGrey700, Accent.Blue400, TextShade.WHITE);
+
             if (!Directory.Exists(string.Format(@"{0}/config", Application.StartupPath)))
             {
                 Directory.CreateDirectory(string.Format(@"{0}/config", Application.StartupPath));
+            }
+
+            if (Directory.GetFiles(string.Format(@"{0}/config", Application.StartupPath)).Length <= 0)
+            {
+                MessageBox.Show("还没有配置文件,请先创建", "mCopernicus", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new addForm(null, null, null, null, null).ShowDialog();
             }
 
             folder = new DirectoryInfo(string.Format(@"{0}/config", Application.StartupPath));
@@ -55,11 +66,6 @@ namespace mCopernicus
             {
                 mlListView.Items.Add(file.Name.Replace(".json", ""));
             }
-
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey500, Primary.BlueGrey700, Primary.BlueGrey700, Accent.Blue400, TextShade.WHITE);
         }
 
         private void startButton_Click(object sender, EventArgs e)
