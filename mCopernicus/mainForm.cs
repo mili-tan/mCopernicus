@@ -44,6 +44,11 @@ namespace mCopernicus
             UrlReg.Reg("ss");
             MaximizeBox = false;
 
+            if (!Directory.Exists(string.Format(@"{0}/config", Application.StartupPath)))
+            {
+                Directory.CreateDirectory(string.Format(@"{0}/config", Application.StartupPath));
+            }
+
             folder = new DirectoryInfo(string.Format(@"{0}/config", Application.StartupPath));
 
             foreach (FileInfo file in folder.GetFiles("*.json"))
