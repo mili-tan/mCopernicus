@@ -34,10 +34,21 @@ namespace mCopernicus
 
         private void urlButton_Click(object sender, EventArgs e)
         {
+            string[] linkInfo = null;
+            addForm addForm = null;
             try
             {
-                string[] linkInfo = SSURL.Parse(urlTextBox.Text.Replace("ss://","").Replace("/",""));
-                addForm addForm = new addForm(linkInfo[0], linkInfo[1], linkInfo[2], linkInfo[3],null);
+                if (urlTextBox.Text.Contains("#"))
+                {
+                    string[] nameInfo = urlTextBox.Text.Split('#');
+                    linkInfo = SSURL.Parse(nameInfo[0].Replace("ss://", "").Replace("/", ""));
+                    addForm = new addForm(linkInfo[0], linkInfo[1], linkInfo[2], linkInfo[3], nameInfo[1]);
+                }
+                else
+                {
+                    linkInfo = SSURL.Parse(urlTextBox.Text.Replace("ss://", "").Replace("/", ""));
+                    addForm = new addForm(linkInfo[0], linkInfo[1], linkInfo[2], linkInfo[3], null);
+                }
                 Hide();
                 addForm.ShowDialog();
                 Close();

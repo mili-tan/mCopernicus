@@ -43,22 +43,34 @@ namespace mCopernicus
             Height = Height - 220;
             if (fileName != null)
             {
-                Text = Text + " : 编辑 - " + fileName;
-                inputURLButton.Hide();
-                delButton.Show();
-                editBool = true;
-                string jsonFileStr = File.ReadAllText(string.Format("{0}/config/{1}.json", Application.StartupPath, fileName));
-                serverInfoFile = JsonConvert.DeserializeObject<ServerInfo>(jsonFileStr);
-                textBoxIP.Text = serverInfoFile.server;
-                textBoxPort.Text = serverInfoFile.server_port.ToString();
-                textBoxLocalIP.Text = serverInfoFile.local_address;
-                textBoxLoaclPort.Text = serverInfoFile.local_port.ToString();
-                textBoxPassWord.Text = serverInfoFile.password;
-                numericUpDownTimeOut.Value = serverInfoFile.timeout;
-                methodBox.Text = serverInfoFile.method;
-                checkBoxHTTPProxy.Checked = serverInfoFile.http_proxy;
-                checkBoxAuth.Checked = serverInfoFile.auth;
-                textBoxName.Text = fileName;
+                if (File.Exists(string.Format("{0}/config/{1}.json", Application.StartupPath, fileName)))
+                {
+                    Text = Text + " : 编辑 - " + fileName;
+                    inputURLButton.Hide();
+                    delButton.Show();
+                    editBool = true;
+                    string jsonFileStr = File.ReadAllText(string.Format("{0}/config/{1}.json", Application.StartupPath, fileName));
+                    serverInfoFile = JsonConvert.DeserializeObject<ServerInfo>(jsonFileStr);
+                    textBoxIP.Text = serverInfoFile.server;
+                    textBoxPort.Text = serverInfoFile.server_port.ToString();
+                    textBoxLocalIP.Text = serverInfoFile.local_address;
+                    textBoxLoaclPort.Text = serverInfoFile.local_port.ToString();
+                    textBoxPassWord.Text = serverInfoFile.password;
+                    numericUpDownTimeOut.Value = serverInfoFile.timeout;
+                    methodBox.Text = serverInfoFile.method;
+                    checkBoxHTTPProxy.Checked = serverInfoFile.http_proxy;
+                    checkBoxAuth.Checked = serverInfoFile.auth;
+                    textBoxName.Text = fileName;
+                }
+                else
+                {
+                    textBoxName.Text = fileName;
+                    Text = Text + " : 新建";
+                    textBoxIP.Text = ip;
+                    textBoxPassWord.Text = pass;
+                    methodBox.Text = method;
+                    textBoxPort.Text = port;
+                }
             }
             else if (method != null)
             {
