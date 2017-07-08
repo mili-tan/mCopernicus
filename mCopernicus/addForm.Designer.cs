@@ -49,12 +49,13 @@
             this.textBoxLoaclPort = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDownTimeOut = new System.Windows.Forms.NumericUpDown();
-            this.checkBoxHTTPProxy = new System.Windows.Forms.CheckBox();
-            this.checkBoxAuth = new System.Windows.Forms.CheckBox();
             this.delButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.saveButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.inputURLButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.moreButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialCheckBox1 = new MaterialSkin.Controls.MaterialCheckBox();
+            this.checkBoxAuth = new MaterialSkin.Controls.MaterialCheckBox();
+            this.checkBoxHTTPProxy = new MaterialSkin.Controls.MaterialCheckBox();
             this.basicPanel.SuspendLayout();
             this.highPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeOut)).BeginInit();
@@ -239,18 +240,18 @@
             this.highPanel.Controls.Add(this.textBoxLoaclPort, 1, 1);
             this.highPanel.Controls.Add(this.label7, 0, 2);
             this.highPanel.Controls.Add(this.numericUpDownTimeOut, 1, 2);
-            this.highPanel.Controls.Add(this.checkBoxHTTPProxy, 1, 3);
+            this.highPanel.Controls.Add(this.materialCheckBox1, 1, 5);
             this.highPanel.Controls.Add(this.checkBoxAuth, 1, 4);
-            this.highPanel.Controls.Add(this.delButton, 0, 5);
+            this.highPanel.Controls.Add(this.checkBoxHTTPProxy, 1, 3);
             this.highPanel.Location = new System.Drawing.Point(12, 198);
             this.highPanel.Name = "highPanel";
             this.highPanel.RowCount = 6;
-            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.highPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.highPanel.Size = new System.Drawing.Size(343, 201);
             this.highPanel.TabIndex = 12;
             // 
@@ -259,7 +260,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(3, 5);
+            this.label5.Location = new System.Drawing.Point(3, 6);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 4;
@@ -280,7 +281,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(3, 35);
+            this.label6.Location = new System.Drawing.Point(3, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 20);
             this.label6.TabIndex = 6;
@@ -290,7 +291,7 @@
             // 
             this.textBoxLoaclPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLoaclPort.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxLoaclPort.Location = new System.Drawing.Point(115, 33);
+            this.textBoxLoaclPort.Location = new System.Drawing.Point(115, 36);
             this.textBoxLoaclPort.Name = "textBoxLoaclPort";
             this.textBoxLoaclPort.Size = new System.Drawing.Size(225, 27);
             this.textBoxLoaclPort.TabIndex = 7;
@@ -301,7 +302,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(3, 65);
+            this.label7.Location = new System.Drawing.Point(3, 72);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 20);
             this.label7.TabIndex = 8;
@@ -311,7 +312,7 @@
             // 
             this.numericUpDownTimeOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDownTimeOut.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.numericUpDownTimeOut.Location = new System.Drawing.Point(115, 63);
+            this.numericUpDownTimeOut.Location = new System.Drawing.Point(115, 69);
             this.numericUpDownTimeOut.Maximum = new decimal(new int[] {
             9000,
             0,
@@ -326,30 +327,6 @@
             0,
             0});
             // 
-            // checkBoxHTTPProxy
-            // 
-            this.checkBoxHTTPProxy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxHTTPProxy.AutoSize = true;
-            this.checkBoxHTTPProxy.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.checkBoxHTTPProxy.Location = new System.Drawing.Point(115, 93);
-            this.checkBoxHTTPProxy.Name = "checkBoxHTTPProxy";
-            this.checkBoxHTTPProxy.Size = new System.Drawing.Size(225, 24);
-            this.checkBoxHTTPProxy.TabIndex = 10;
-            this.checkBoxHTTPProxy.Text = "HTTP(S)代理模式";
-            this.checkBoxHTTPProxy.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxAuth
-            // 
-            this.checkBoxAuth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxAuth.AutoSize = true;
-            this.checkBoxAuth.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.checkBoxAuth.Location = new System.Drawing.Point(115, 123);
-            this.checkBoxAuth.Name = "checkBoxAuth";
-            this.checkBoxAuth.Size = new System.Drawing.Size(225, 24);
-            this.checkBoxAuth.TabIndex = 11;
-            this.checkBoxAuth.Text = "一次验证";
-            this.checkBoxAuth.UseVisualStyleBackColor = true;
-            // 
             // delButton
             // 
             this.delButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -358,14 +335,13 @@
             this.delButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.delButton.Depth = 0;
             this.delButton.Icon = global::mCopernicus.Properties.Resources.delete;
-            this.delButton.Location = new System.Drawing.Point(4, 156);
+            this.delButton.Location = new System.Drawing.Point(64, 418);
             this.delButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.delButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.delButton.Name = "delButton";
             this.delButton.Primary = false;
-            this.delButton.Size = new System.Drawing.Size(84, 39);
+            this.delButton.Size = new System.Drawing.Size(44, 36);
             this.delButton.TabIndex = 16;
-            this.delButton.Text = "删除";
             this.delButton.UseVisualStyleBackColor = true;
             this.delButton.Visible = false;
             this.delButton.Click += new System.EventHandler(this.delButton_Click);
@@ -422,6 +398,59 @@
             this.moreButton.UseVisualStyleBackColor = true;
             this.moreButton.Click += new System.EventHandler(this.moreButton_Click);
             // 
+            // materialCheckBox1
+            // 
+            this.materialCheckBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCheckBox1.AutoSize = true;
+            this.materialCheckBox1.Depth = 0;
+            this.materialCheckBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
+            this.materialCheckBox1.Location = new System.Drawing.Point(112, 168);
+            this.materialCheckBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckBox1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckBox1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckBox1.Name = "materialCheckBox1";
+            this.materialCheckBox1.Ripple = true;
+            this.materialCheckBox1.Size = new System.Drawing.Size(231, 30);
+            this.materialCheckBox1.TabIndex = 17;
+            this.materialCheckBox1.Text = "设为默认下一次自动连接";
+            this.materialCheckBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAuth
+            // 
+            this.checkBoxAuth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxAuth.AutoSize = true;
+            this.checkBoxAuth.Depth = 0;
+            this.checkBoxAuth.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
+            this.checkBoxAuth.Location = new System.Drawing.Point(112, 133);
+            this.checkBoxAuth.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxAuth.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.checkBoxAuth.MouseState = MaterialSkin.MouseState.HOVER;
+            this.checkBoxAuth.Name = "checkBoxAuth";
+            this.checkBoxAuth.Ripple = true;
+            this.checkBoxAuth.Size = new System.Drawing.Size(231, 30);
+            this.checkBoxAuth.TabIndex = 18;
+            this.checkBoxAuth.Text = "一次验证（已不建议）";
+            this.checkBoxAuth.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxHTTPProxy
+            // 
+            this.checkBoxHTTPProxy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxHTTPProxy.AutoSize = true;
+            this.checkBoxHTTPProxy.Checked = true;
+            this.checkBoxHTTPProxy.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxHTTPProxy.Depth = 0;
+            this.checkBoxHTTPProxy.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
+            this.checkBoxHTTPProxy.Location = new System.Drawing.Point(112, 100);
+            this.checkBoxHTTPProxy.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxHTTPProxy.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.checkBoxHTTPProxy.MouseState = MaterialSkin.MouseState.HOVER;
+            this.checkBoxHTTPProxy.Name = "checkBoxHTTPProxy";
+            this.checkBoxHTTPProxy.Ripple = true;
+            this.checkBoxHTTPProxy.Size = new System.Drawing.Size(231, 30);
+            this.checkBoxHTTPProxy.TabIndex = 19;
+            this.checkBoxHTTPProxy.Text = "HTTP(S)代理模式";
+            this.checkBoxHTTPProxy.UseVisualStyleBackColor = true;
+            // 
             // addForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -433,6 +462,7 @@
             this.Controls.Add(this.highPanel);
             this.Controls.Add(this.highDivider);
             this.Controls.Add(this.basicPanel);
+            this.Controls.Add(this.delButton);
             this.Controls.Add(this.materialDivider1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "addForm";
@@ -465,8 +495,6 @@
         private System.Windows.Forms.TextBox textBoxLoaclPort;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numericUpDownTimeOut;
-        private System.Windows.Forms.CheckBox checkBoxHTTPProxy;
-        private System.Windows.Forms.CheckBox checkBoxAuth;
         private MaterialSkin.Controls.MaterialFlatButton saveButton;
         private MaterialSkin.Controls.MaterialFlatButton moreButton;
         private MaterialSkin.Controls.MaterialFlatButton inputURLButton;
@@ -477,5 +505,8 @@
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox textBoxName;
         private MaterialSkin.Controls.MaterialFlatButton delButton;
+        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox1;
+        private MaterialSkin.Controls.MaterialCheckBox checkBoxAuth;
+        private MaterialSkin.Controls.MaterialCheckBox checkBoxHTTPProxy;
     }
 }

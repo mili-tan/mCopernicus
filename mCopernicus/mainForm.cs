@@ -47,7 +47,7 @@ namespace mCopernicus
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey500, Primary.BlueGrey700, Primary.BlueGrey700, Accent.Blue400, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey500, Primary.BlueGrey700, Primary.BlueGrey700, Accent.Cyan700, TextShade.WHITE);
 
             if (!Directory.Exists(string.Format(@"{0}/config", Application.StartupPath)))
             {
@@ -206,6 +206,11 @@ namespace mCopernicus
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
         {
             notifyIcon_MouseDoubleClick(null, null);
+        }
+
+        private void setButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
