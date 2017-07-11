@@ -119,7 +119,7 @@ namespace mCopernicus
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            new addForm(null, null, null, null, null).ShowDialog();
+            new addForm().ShowDialog();
             mlListView.Items.Clear();
             foreach (FileInfo file in folder.GetFiles("*.json"))
             {
@@ -166,7 +166,7 @@ namespace mCopernicus
                 selectedIndex = mlListView.SelectedIndices;
                 fileName = mlListView.Items[selectedIndex[0]].Text;
             }
-            new addForm(null, null, null, null, fileName).ShowDialog();
+            new addForm(fileName).ShowDialog();
         }
 
         private void mainForm_MouseDoubleClick(object sender, MouseEventArgs e)

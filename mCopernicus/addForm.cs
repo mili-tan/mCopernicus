@@ -29,6 +29,7 @@ namespace mCopernicus
             public bool auth { get; set; }
         }
 
+        ServerInfo serverInfo = new ServerInfo();
         ServerInfo serverInfoFile;
         bool editBool = false;
         string fileNameSource;
@@ -49,18 +50,7 @@ namespace mCopernicus
                     inputURLButton.Hide();
                     delButton.Show();
                     editBool = true;
-                    string jsonFileStr = File.ReadAllText(string.Format("{0}/config/{1}.json", Application.StartupPath, fileName));
-                    serverInfoFile = JsonConvert.DeserializeObject<ServerInfo>(jsonFileStr);
-                    textBoxIP.Text = serverInfoFile.server;
-                    textBoxPort.Text = serverInfoFile.server_port.ToString();
-                    textBoxLocalIP.Text = serverInfoFile.local_address;
-                    textBoxLoaclPort.Text = serverInfoFile.local_port.ToString();
-                    textBoxPassWord.Text = serverInfoFile.password;
-                    numericUpDownTimeOut.Value = serverInfoFile.timeout;
-                    methodBox.Text = serverInfoFile.method;
-                    checkBoxHTTPProxy.Checked = serverInfoFile.http_proxy;
-                    checkBoxAuth.Checked = serverInfoFile.auth;
-                    textBoxName.Text = fileName;
+                    readJsonFile(fileName);
                 }
                 else
                 {
@@ -85,6 +75,37 @@ namespace mCopernicus
                 Text = Text + " : 新建";
             }
         }
+
+        public addForm()
+        {
+            InitializeComponent();
+            methodBox.SelectedIndex = 2;
+            highDivider.Hide();
+            highPanel.Hide();
+            Height = Height - 220;
+            Text = Text + " : 新建";
+        }
+
+        public addForm(string fileName)
+        {
+            fileNameSource = fileName;
+            InitializeComponent();
+            methodBox.SelectedIndex = 2;
+            highDivider.Hide();
+            highPanel.Hide();
+            Height = Height - 220;
+            if (fileName != null)
+            {
+                if (File.Exists(string.Format("{0}/config/{1}.json", Application.StartupPath, fileName)))
+                {
+                    Text = Text + " : 编辑 - " + fileName;
+                    inputURLButton.Hide();
+                    delButton.Show();
+                    editBool = true;
+                    readJsonFile(fileName);
+                }
+            }
+            }
 
         private void addForm_Load(object sender, EventArgs e)
         {
@@ -115,10 +136,8 @@ namespace mCopernicus
         private void inputURLButton_Click(object sender, EventArgs e)
         {
             Close();
-            new urlForm(null).Show();
+            new urlForm().Show();
         }
-
-        ServerInfo serverInfo = new ServerInfo();
 
         private void saveButton_Click(object sender, EventArgs e)
         {
@@ -126,8 +145,10 @@ namespace mCopernicus
             {
                 File.Delete(string.Format("{0}/config/{1}.json", Application.StartupPath, fileNameSource));
             }
+
             textBoxName.Text = textBoxName.Text.Trim();
             string[] strCodes = textBoxName.Text.Split(' ');
+
             if (string.IsNullOrEmpty(textBoxIP.Text) || string.IsNullOrEmpty(textBoxPassWord.Text) || string.IsNullOrEmpty(textBoxLoaclPort.Text) || string.IsNullOrEmpty(textBoxName.Text))
             {
                 MessageBox.Show("请确保所有内容以键入", "mCopernicus", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -138,19 +159,7 @@ namespace mCopernicus
             }
             else
             {
-                serverInfo.server = textBoxIP.Text;
-                serverInfo.server_port = Convert.ToInt32(textBoxPort.Text);
-                serverInfo.local_address = textBoxLocalIP.Text;
-                serverInfo.local_port = Convert.ToInt32(textBoxLoaclPort.Text);
-                serverInfo.password = textBoxPassWord.Text;
-                serverInfo.timeout = Convert.ToInt32(numericUpDownTimeOut.Value);
-                serverInfo.method = methodBox.Text;
-                serverInfo.http_proxy = checkBoxHTTPProxy.Checked;
-                serverInfo.auth = checkBoxAuth.Checked;
-                string linkJson = JsonConvert.SerializeObject(serverInfo);
-                File.WriteAllText(string.Format("{0}/config/{1}.json", Application.StartupPath, textBoxName.Text), linkJson);
-                MessageBox.Show("保存成功！");
-                Close();
+                saveJsonFile();
             }
         }
 
@@ -159,6 +168,39 @@ namespace mCopernicus
             File.Delete(string.Format("{0}/config/{1}.json", Application.StartupPath, fileNameSource));
             fileNameSource = null;
             MessageBox.Show("您所选的连接已删除。");
+            Close();
+        }
+
+        private void readJsonFile(string fileStr)
+        {
+            string jsonFileStr = File.ReadAllText(string.Format("{0}/config/{1}.json", Application.StartupPath, fileStr));
+            serverInfoFile = JsonConvert.DeserializeObject<ServerInfo>(jsonFileStr);
+            textBoxIP.Text = serverInfoFile.server;
+            textBoxPort.Text = serverInfoFile.server_port.ToString();
+            textBoxLocalIP.Text = serverInfoFile.local_address;
+            textBoxLoaclPort.Text = serverInfoFile.local_port.ToString();
+            textBoxPassWord.Text = serverInfoFile.password;
+            numericUpDownTimeOut.Value = serverInfoFile.timeout;
+            methodBox.Text = serverInfoFile.method;
+            checkBoxHTTPProxy.Checked = serverInfoFile.http_proxy;
+            checkBoxAuth.Checked = serverInfoFile.auth;
+            textBoxName.Text = fileStr;
+        }
+
+        private void saveJsonFile()
+        {
+            serverInfo.server = textBoxIP.Text;
+            serverInfo.server_port = Convert.ToInt32(textBoxPort.Text);
+            serverInfo.local_address = textBoxLocalIP.Text;
+            serverInfo.local_port = Convert.ToInt32(textBoxLoaclPort.Text);
+            serverInfo.password = textBoxPassWord.Text;
+            serverInfo.timeout = Convert.ToInt32(numericUpDownTimeOut.Value);
+            serverInfo.method = methodBox.Text;
+            serverInfo.http_proxy = checkBoxHTTPProxy.Checked;
+            serverInfo.auth = checkBoxAuth.Checked;
+            string linkJson = JsonConvert.SerializeObject(serverInfo);
+            File.WriteAllText(string.Format("{0}/config/{1}.json", Application.StartupPath, textBoxName.Text), linkJson);
+            MessageBox.Show("保存成功！");
             Close();
         }
     }

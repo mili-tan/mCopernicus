@@ -15,6 +15,7 @@ namespace mCopernicus
     public partial class urlForm : Form
     {
         Color originColor;
+
         public urlForm(string linkString)
         {
             InitializeComponent();
@@ -22,6 +23,11 @@ namespace mCopernicus
             {
                 urlTextBox.Text = linkString;
             }
+        }
+
+        public urlForm()
+        {
+            InitializeComponent();
         }
 
         private void urlForm_Load(object sender, EventArgs e)
