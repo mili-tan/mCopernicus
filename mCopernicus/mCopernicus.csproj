@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProxySet.cs" />
     <Compile Include="setForm.cs">
       <SubType>Form</SubType>
     </Compile>
