@@ -109,7 +109,7 @@ namespace mCopernicus
                 {
                     process.Kill();
                 }
-                logStr = logStr + process.StandardOutput.ReadToEnd().ToString();
+                logStr = logStr + process.StandardOutput.ReadLine().ToString();
                 MessageBox.Show(logStr);
                 File.WriteAllText(string.Format("{0}/m.log", Application.StartupPath), string.Format("{0}\n\r{1}", DateTime.Now.ToString(), logStr));
                 process.Close();
@@ -210,7 +210,12 @@ namespace mCopernicus
 
         private void setButton_Click(object sender, EventArgs e)
         {
+            new setForm().ShowDialog();
+        }
 
+        private void backgroundWorkerGetCmd_DoWork(object sender, DoWorkEventArgs e)
+        {
+            
         }
     }
 }
